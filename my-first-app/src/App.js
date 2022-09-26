@@ -4,6 +4,8 @@ import './App.css';
 // import Message from './Message';
 // import Badge from './Badge';
 import Card from './Card';
+import Dropdown from './Dropdown';
+// import Parent from './Parent';
 
 function App() {
 
@@ -26,7 +28,8 @@ function App() {
       <Badge caption="Inbox"></Badge>
       <Badge caption="Sent"></Badge> */}
       <div className="row">
-      {courseList}
+      {/* {courseList} */}
+      <Dropdown></Dropdown>
       </div>
 
   
