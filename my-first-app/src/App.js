@@ -5,6 +5,7 @@ import './App.css';
 // import Badge from './Badge';
 import Card from './Card';
 import Dropdown from './Dropdown';
+import ViewEmployees from './ViewEmployees';
 // import Parent from './Parent';
 
 function App() {
@@ -29,7 +30,9 @@ function App() {
       <Badge caption="Sent"></Badge> */}
       <div className="row">
       {/* {courseList} */}
-      <Dropdown></Dropdown>
+      {/* <Dropdown></Dropdown>
+       */}
+       <ViewEmployees></ViewEmployees>
       </div>
 
   
