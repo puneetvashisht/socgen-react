@@ -1,7 +1,8 @@
 import React from 'react'
-import {Link } from "react-router-dom";
-export default function Header() {
+import { Outlet, Link } from "react-router-dom";
+export default function Home() {
   return (
+    <>
     <nav>
     <ul>
       <li>
@@ -13,8 +14,12 @@ export default function Header() {
       <li>
       <Link to={`contact`}>Contact</Link>
       </li>
+      <li>
+      <a href="/contact">Contact</a>
+      </li>
     </ul>
   </nav>
-
+    <div>home component</div>
+    </>
   )
 }

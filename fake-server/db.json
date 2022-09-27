@@ -48,11 +48,6 @@
       "id": 3
     },
     {
-      "name": "test3",
-      "isVaccinated": false,
-      "id": 9
-    },
-    {
       "name": "Abc1",
       "isVaccinated": true,
       "id": 10
@@ -66,6 +61,11 @@
       "name": "Harshit",
       "isVaccinated": false,
       "id": 12
+    },
+    {
+      "name": "Sonia",
+      "isVaccinated": true,
+      "id": 13
     }
   ],
   "profile": {

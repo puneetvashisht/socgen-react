@@ -11,6 +11,7 @@ import reportWebVitals from './reportWebVitals';
 import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact';
+import Header from './components/Header';
 
 
 const router = createBrowserRouter([
@@ -30,7 +31,7 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    
+    <Header></Header>
     <RouterProvider router={router} />
   </React.StrictMode>
 );
