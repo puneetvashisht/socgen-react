@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 
-export default function AddCitizens() {
+export default function UpdateCitizen() {
     const status = [true, false];
 
 
     // const [fruit, setFruit] = useState("apple");
     const [name, setName] = useState('')
+    const [id, setId] = useState('')
     const [vaccinated, setVaccinated] = useState(true)
     const [message, setMessage] = useState('')
 
@@ -13,11 +14,11 @@ export default function AddCitizens() {
         console.log(event.target.value)
         setName(event.target.value)
     }
-    const addCitizen = ()=> {
-        console.log({name, vaccinated})
+    const updateCitizen = () => {
+        console.log({id ,name, vaccinated})
         // make http post call to server
-        fetch('http://localhost:8000/citizens', {
-            method: 'POST',
+        fetch('http://localhost:8000/citizens/'+id, {
+            method: 'PATCH',
             headers: {
                 'Content-type': 'application/json'
             },
@@ -25,8 +26,8 @@ export default function AddCitizens() {
         })
         .then(res=> {
             if(res.status===201){
-                console.log('Successfully added to the server!')
-                setMessage('Successfully added to the server!')
+                console.log('Successfully updated to the server!')
+                setMessage('Successfully updated to the server!')
             }
         })
     
@@ -39,8 +40,12 @@ export default function AddCitizens() {
     </div>}
 
     <div className="mb-3">
-    <label forName="exampleFormControlInput1" className="form-label">Citizen Name</label>
-    <input type="text" onChange={handleNameChange} value={name} className="form-control" id="exampleFormControlInput1" placeholder="Enter Name"/>
+    <label forName="exampleFormControlInput1" className="form-label">Citizen Id</label>
+    <input type="text" onChange={(e)=>setId(e.target.value)} value={id} className="form-control" id="exampleFormControlInput1" placeholder="Enter Name"/>
+    </div>
+    <div className="mb-3">
+    <label forName="exampleFormControlInput3" className="form-label">Citizen Name</label>
+    <input type="text" onChange={handleNameChange} value={name} className="form-control" id="exampleFormControlInput3" placeholder="Enter Name"/>
     </div>
     <div className="mb-3">
     <label forName="exampleFormControlInput2" className="form-label">Citizen Vaccinated</label>
@@ -66,7 +71,7 @@ export default function AddCitizens() {
     </div>
    
     <div className="mb-3">
-    <button onClick={addCitizen} className="btn btn-primary">Add Citizen</button>
+    <button onClick={updateCitizen} className="btn btn-primary">Update Citizen</button>
     </div>
 
     </>
