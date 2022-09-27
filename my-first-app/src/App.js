@@ -1,11 +1,13 @@
 
 import { useState } from 'react';
+import AddEmployee from './AddEmployee';
 import './App.css';
 // import Message from './Message';
 // import Badge from './Badge';
 import Card from './Card';
 import Dropdown from './Dropdown';
 import ViewEmployees from './ViewEmployees';
+import ViewEmployeesWithClass from './ViewEmployeesWithClass';
 // import Parent from './Parent';
 
 function App() {
@@ -32,7 +34,11 @@ function App() {
       {/* {courseList} */}
       {/* <Dropdown></Dropdown>
        */}
+
+       <AddEmployee></AddEmployee>
+       <hr/>
        <ViewEmployees></ViewEmployees>
+       {/* <ViewEmployeesWithClass></ViewEmployeesWithClass> */}
       </div>
 
   

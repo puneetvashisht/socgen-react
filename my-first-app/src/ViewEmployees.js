@@ -1,23 +1,33 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 
 export default function ViewEmployees() {
 
+    console.log('constructor... ')
     const [employees, setEmployees] = useState([]);
+    const [show, setShow] = useState(false)
 
-    const loadData = () => {
-        // http call to server to get data: localhost:8000/employees
-        // third-party promise based library
+    useEffect(() => {
+        console.log('initialization. .. cdm... ')
         axios.get('http://localhost:8000/employees')
         .then(res=>{
             console.log(res);
             setEmployees(res.data);
         })
-        // .then(data=>{
-        //     console.log(data);
+    }, [show])
+
+
+    
+
+    // const loadData = () => {
+    //     // http call to server to get data: localhost:8000/employees
+    //     // third-party promise based library
+        
+    //     // .then(data=>{
+    //     //     console.log(data);
             
-        // })
-    }
+    //     // })
+    // }
 
     const deleteEmployee = (id) => {
         // http-delete
@@ -28,9 +38,10 @@ export default function ViewEmployees() {
         })
         .then(res=>{
             console.log(res);
+            setShow(!show);
             // loadData();
-            let remainingEmployees =  employees.filter((e)=>e.id!==id)
-            setEmployees(remainingEmployees);
+            // let remainingEmployees =  employees.filter((e)=>e.id!==id)
+            // setEmployees(remainingEmployees);
         })
     }
 
@@ -49,8 +60,7 @@ export default function ViewEmployees() {
     })
 
     return (
-        <>
-        <button onClick={loadData} className='btn btn-primary'>Load data</button>
+
             <table className="table">
                 <thead>
                     <tr>
@@ -64,7 +74,7 @@ export default function ViewEmployees() {
                     {employeeList}
                 </tbody>
             </table>
-        </>
+
 
         // {list}
     )

@@ -8,12 +8,44 @@
     {
       "name": "test",
       "salary": 34343.33,
-      "id": 4
+      "id": 9
     },
     {
-      "name": "test",
-      "salary": 34343.33,
-      "id": 5
+      "name": "Ravi",
+      "salary": "343434",
+      "id": 10
+    },
+    {
+      "name": "Rithik",
+      "salary": "343443",
+      "id": 11
+    },
+    {
+      "name": "Harshit",
+      "salary": "34343",
+      "id": 12
+    },
+    {
+      "name": "Kunal",
+      "salary": "343434",
+      "id": 13
+    }
+  ],
+  "citizens": [
+    {
+      "id": 1,
+      "name": "Harshit",
+      "isVaccinated": true
+    },
+    {
+      "name": "Priya",
+      "isVaccinated": true,
+      "id": 2
+    },
+    {
+      "name": "Test",
+      "isVaccinated": false,
+      "id": 3
     }
   ],
   "profile": {
