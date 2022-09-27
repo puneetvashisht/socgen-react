@@ -1,14 +1,27 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { useParams, useNavigate } from 'react-router-dom';
 
 export default function UpdateCitizen() {
     const status = [true, false];
-
+    const { citizenId } = useParams()
+    let navigate = useNavigate();
 
     // const [fruit, setFruit] = useState("apple");
     const [name, setName] = useState('')
     const [id, setId] = useState('')
     const [vaccinated, setVaccinated] = useState(true)
-    const [message, setMessage] = useState('')
+    
+    useEffect(() => {
+     fetch('http://localhost:8000/citizens/' + citizenId)
+     .then(res=>res.json())
+     .then(data => {
+        console.log(data);
+        setId(data.id)
+        setName(data.name);
+        setVaccinated(data.isVaccinated);
+     })
+    }, [citizenId])
+    
 
     const handleNameChange = (event)=> {
         console.log(event.target.value)
@@ -25,9 +38,9 @@ export default function UpdateCitizen() {
             body: JSON.stringify({name, isVaccinated: vaccinated})
         })
         .then(res=> {
-            if(res.status===201){
+            if(res.status===200){
                 console.log('Successfully updated to the server!')
-                setMessage('Successfully updated to the server!')
+                navigate('/viewcitizens')
             }
         })
     
@@ -35,25 +48,22 @@ export default function UpdateCitizen() {
 
   return (
     <>
-    {message && <div className="alert alert-success" role="alert">
-        {message}
-    </div>}
 
     <div className="mb-3">
-    <label forName="exampleFormControlInput1" className="form-label">Citizen Id</label>
-    <input type="text" onChange={(e)=>setId(e.target.value)} value={id} className="form-control" id="exampleFormControlInput1" placeholder="Enter Name"/>
+    <label htmlFor="exampleFormControlInput1" className="form-label">Citizen Id</label>
+    <input type="text" disabled onChange={(e)=>setId(e.target.value)} value={id} className="form-control" id="exampleFormControlInput1" placeholder="Enter Id"/>
     </div>
     <div className="mb-3">
-    <label forName="exampleFormControlInput3" className="form-label">Citizen Name</label>
+    <label htmlFor="exampleFormControlInput3" className="form-label">Citizen Name</label>
     <input type="text" onChange={handleNameChange} value={name} className="form-control" id="exampleFormControlInput3" placeholder="Enter Name"/>
     </div>
     <div className="mb-3">
-    <label forName="exampleFormControlInput2" className="form-label">Citizen Vaccinated</label>
+    <label htmlFor="exampleFormControlInput2" className="form-label">Citizen Vaccinated</label>
     </div>
     <div>
     {status.map((v, index) => (
-        <>
-          <input key={index}
+        <div  key={index}>
+          <input
            id="exampleFormControlInput2"
             type="radio"
             name="vaccinated"
@@ -65,7 +75,7 @@ export default function UpdateCitizen() {
             } 
           />
           {v?'Vaccinated': 'Not Vaccinated'}
-        </>
+        </div>
       ))}
       {/* <p>{vaccinated?'Vaccinated': 'Not Vaccinated'}</p> */}
     </div>

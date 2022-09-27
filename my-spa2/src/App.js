@@ -21,7 +21,6 @@ function App() {
         <Link className="nav-link" to="/about">About</Link>
         <Link className="nav-link" to="/viewcitizens">View Citizens</Link>
         <Link className="nav-link" to="/addcitizen">Add Citizen</Link>
-        <Link className="nav-link" to="/updatecitizen">Update Citizen</Link>
       </div>
     </div>
   </div>

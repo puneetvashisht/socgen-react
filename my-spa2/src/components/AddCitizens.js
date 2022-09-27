@@ -39,11 +39,11 @@ export default function AddCitizens() {
     </div>}
 
     <div className="mb-3">
-    <label forName="exampleFormControlInput1" className="form-label">Citizen Name</label>
+    <label htmlFor="exampleFormControlInput1" className="form-label">Citizen Name</label>
     <input type="text" onChange={handleNameChange} value={name} className="form-control" id="exampleFormControlInput1" placeholder="Enter Name"/>
     </div>
     <div className="mb-3">
-    <label forName="exampleFormControlInput2" className="form-label">Citizen Vaccinated</label>
+    <label htmlFor="exampleFormControlInput2" className="form-label">Citizen Vaccinated</label>
     </div>
     <div>
     {status.map((v, index) => (

@@ -24,7 +24,7 @@ root.render(
       <Route path="about" element={<About />} />
       <Route path="viewcitizens" element={<ViewCitizens/>}/>
       <Route path="addcitizen" element={<AddCitizens/>}/>
-      <Route path="updatecitizen" element={<UpdateCitizen/>}/>
+      <Route path="updatecitizen/:citizenId" element={<UpdateCitizen/>}/>
       </Route>
     </Routes>
   </BrowserRouter>

@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react'
+import { Link } from 'react-router-dom'
 
 export default function ViewCitizens() {
 
@@ -31,7 +32,7 @@ export default function ViewCitizens() {
         return (
             <tr key={citizen.id}>
             <th scope="row">{index + 1}</th>
-            <td >{citizen.name}</td>
+            <td ><Link to={'/updatecitizen/' + citizen.id}>{citizen.name}</Link></td>
             <td>{citizen.isVaccinated? 'Vaccinated': 'Not Vaccinated'}</td>
             <td><button onClick={()=>deleteCitizen(citizen.id)} className='btn btn-danger'> X </button></td>
             </tr>
