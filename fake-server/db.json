@@ -59,6 +59,24 @@
       "price": 43000,
       "description": "From Apple .....",
       "id": 10
+    },
+    {
+      "name": "some name",
+      "description": "dsgds dsggds ",
+      "price": "3333",
+      "id": 11
+    },
+    {
+      "name": "",
+      "description": "",
+      "price": "",
+      "id": 12
+    },
+    {
+      "name": "Galaxy",
+      "description": "samsung produict",
+      "price": "3434",
+      "id": 13
     }
   ],
   "employees": [
@@ -91,6 +109,11 @@
       "name": "Kunal",
       "salary": "343434",
       "id": 13
+    },
+    {
+      "name": "dsgg",
+      "salary": "",
+      "id": 14
     }
   ],
   "citizens": [
