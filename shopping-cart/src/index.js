@@ -11,6 +11,7 @@ import {
 } from "react-router-dom";
 import Product from './components/Product';
 import AddProduct from './components/AddProduct';
+import Basic from './components/Basic';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -19,6 +20,7 @@ root.render(
       <Route path="/" element={<App />} >
         <Route path="product" element={<Product />} />
         <Route path="add" element={<AddProduct />} />
+        <Route path="basic" element={<Basic />} />
       </Route>
     </Routes>
   </BrowserRouter>

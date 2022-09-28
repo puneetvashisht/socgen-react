@@ -14,6 +14,7 @@ function App() {
             <div className="navbar-nav">
               <Link className="nav-link" to="/product">View Products</Link>
               <Link className="nav-link" to="/add">Add Product</Link>
+              <Link className="nav-link" to="/basic">Basic</Link>
             </div>
           </div>
         </div>
