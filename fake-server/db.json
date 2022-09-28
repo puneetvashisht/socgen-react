@@ -2,9 +2,63 @@
   "products": [
     {
       "id": 1,
-      "name":"iPhone",
+      "name": "iPhone",
       "price": 40000,
       "description": "From Apple ....."
+    },
+    {
+      "id": 2,
+      "name": "iPad",
+      "price": 30000,
+      "description": "From Apple ....."
+    },
+    {
+      "id": 3,
+      "name": "iPhone",
+      "price": 40000,
+      "description": "From Apple ....."
+    },
+    {
+      "id": 4,
+      "name": "iPad",
+      "price": 30000,
+      "description": "From Apple ....."
+    },
+    {
+      "id": 5,
+      "name": "iPhone",
+      "price": 40000,
+      "description": "From Apple ....."
+    },
+    {
+      "id": 6,
+      "name": "iPad",
+      "price": 30000,
+      "description": "From Apple ....."
+    },
+    {
+      "id": 7,
+      "name": "iPhone",
+      "price": 40000,
+      "description": "From Apple ....."
+    },
+    {
+      "id": 8,
+      "name": "iPad",
+      "price": 30000,
+      "description": "From Apple ....."
+    },
+    {
+      "id": 9,
+      "name": "iPad",
+      "price": 30000,
+      "description": "From Apple ....."
+    },
+    {
+      "name": "iWatch",
+      "price": 43000,
+      "description": "From Apple .....",
+      "id": 10
     }
   ],
   "employees": [
