@@ -3,7 +3,7 @@ import BasicExample from './BasicExample'
 
 export default function Product() {
 
-    const [products, setpPoducts] = useState([])
+    const [products, setProducts] = useState([])
 
     useEffect(() => {
       // fetch all products from json-server fake backend
