@@ -1,4 +1,12 @@
 {
+  "products": [
+    {
+      "id": 1,
+      "name":"iPhone",
+      "price": 40000,
+      "description": "From Apple ....."
+    }
+  ],
   "employees": [
     {
       "id": 2,

@@ -18,6 +18,7 @@
      - Single Page Applications
     
     Day 3
+     - Small application
      - Redux
      - Testing (optional)
 
