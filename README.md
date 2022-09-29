@@ -19,7 +19,7 @@
     
     Day 3
      - Small application
-     - Redux
+     - Redux (store, reducers, dispatch, action)
      - Testing (optional)
 
     Day 4 

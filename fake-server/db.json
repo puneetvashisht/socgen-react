@@ -1,4 +1,7 @@
 {
+  "login": {
+    "auth": true
+  },
   "products": [
     {
       "id": 1,
