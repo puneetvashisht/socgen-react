@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.css'
 import Login from './components/Login';
-import {createStore} from 'redux';
+import {combineReducers, createStore} from 'redux';
 import {
   BrowserRouter,
   Routes,
@@ -13,26 +13,14 @@ import {
 } from "react-router-dom";
 import Home from './components/Home';
 import { Provider } from 'react-redux';
-
-const initialState = {
-  auth: false
-}
+import authReducer from './store/authReducer';
+import productReducer from './store/productReducer';
+import ProductList from './components/ProductList';
+import Product from './components/Product';
+import AddProduct from './components/AddProduct';
 
 // 1. create a single store for entire application
-const store = createStore((state = initialState, action)=> {
-  switch(action.type){
-      case 'LOGIN': 
-          console.log('Login action .... ')
-          return {auth: true}
-      
-      case 'LOGOUT': 
-          return {auth: false}
-
-      default:
-        return state
-      
-  }
-})
+const store = createStore(combineReducers({authReducer, productReducer}))
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -42,6 +30,9 @@ root.render(
       <Route path="/" element={<App />} >
         <Route path="login" element={<Login />} />
         <Route path="home" element={<Home />} />
+        <Route path="viewproducts" element={<ProductList />} />
+        <Route path="products" element={<Product />} />
+        <Route path="addproduct" element={<AddProduct />} />
       </Route>
     </Routes>
   </BrowserRouter>

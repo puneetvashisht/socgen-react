@@ -20,6 +20,10 @@ const Header = (props)=> {
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
               <Link className="nav-link" to="/home">Home</Link>
+              {props.loggedIn.auth && <Link className="nav-link" to="/viewproducts">Products List</Link>}
+              {props.loggedIn.auth && <Link className="nav-link" to="/products">Products</Link>}
+              {props.loggedIn.auth && <Link className="nav-link" to="/addproduct">Add Product</Link>}
+              {"    "}
               {!props.loggedIn.auth && <Link className="nav-link" to="/login">Login</Link>}
               {props.loggedIn.auth && <Link className="nav-link" onClick={logout}>Logout</Link>}
             </div>
@@ -33,7 +37,7 @@ const Header = (props)=> {
 const mapStateToProps = (state)=> {
     console.log('In the header component ', state);
     return {
-      loggedIn: state
+      loggedIn: state.authReducer
     }
   }
 const mapDispatchToProps = (dispatch)=> {
