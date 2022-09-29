@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.css'
 import Login from './components/Login';
-import {combineReducers, createStore} from 'redux';
+import {combineReducers, createStore, applyMiddleware} from 'redux';
 import {
   BrowserRouter,
   Routes,
@@ -18,9 +18,17 @@ import productReducer from './store/productReducer';
 import ProductList from './components/ProductList';
 import Product from './components/Product';
 import AddProduct from './components/AddProduct';
+import { composeWithDevTools } from 'redux-devtools-extension'
+import thunkMiddleware from 'redux-thunk'
 
 // 1. create a single store for entire application
-const store = createStore(combineReducers({authReducer, productReducer}))
+const composedEnhancer = composeWithDevTools(
+  // EXAMPLE: Add whatever middleware you actually want to use here
+  applyMiddleware(thunkMiddleware)
+  // other store enhancers if any
+)
+
+const store = createStore(combineReducers({authReducer, productReducer}), composedEnhancer)
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

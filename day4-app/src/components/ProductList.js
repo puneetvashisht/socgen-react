@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import { connect } from 'react-redux'
+import * as actions from '../actions/product.js'
 // 1. Single place for products Storage
 // 2. fetch/http call is not at a single place
 // 3. Component is doing template modification/http calls
@@ -34,7 +35,7 @@ const mapStateToProps = (state)=> {
   }
   const mapDispatchToProps = (dispatch)=> {
     return {
-      onDeleteProduct: (id) =>  { dispatch({type:'DELETE_PRODUCT', payload: {id}})}
+      onDeleteProduct: (id) =>  dispatch(actions.deleteProduct(id))
     }
   }
   export default connect(mapStateToProps, mapDispatchToProps)(ProductList)

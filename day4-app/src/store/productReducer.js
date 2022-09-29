@@ -1,7 +1,6 @@
 let initialState = {
     products: [
-        {id: 1, name:'iPhone', description:'from Applee', price: 445455},
-        {id: 2, name:'iPad', description:'from Applee', price: 245455}
+       
     ]
   }
   
@@ -10,7 +9,7 @@ let initialState = {
     switch(action.type){
         case 'FETCH_PRODUCTS': 
             console.log('fetching products...');
-            return {products: state.products};
+            return {products: action.payload};
         
         case 'ADD_PRODUCT': 
             console.log('add a product...');

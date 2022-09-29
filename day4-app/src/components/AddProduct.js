@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import { connect } from 'react-redux'
 import classes from './AddProduct.module.css'
+import * as actions from '../actions/product.js'
+
 const AddProduct = (props) => {
 
     const [name, setName] = useState('')
@@ -31,8 +33,8 @@ const AddProduct = (props) => {
     }
 
     const addProduct = () => {
-        console.log({id:34, name, description, price});
-        props.onAddProduct({id:34,name, description, price})
+        console.log({ name, description, price});
+        props.onAddProduct({name, description, price})
         // dispatch ADD_PRODUCT to store
        
     }
@@ -61,7 +63,7 @@ const AddProduct = (props) => {
 
 const mapDispatchToProps = (dispatch)=> {
     return {
-      onAddProduct: (product) =>  {console.log(product); dispatch({type:'ADD_PRODUCT', payload:product})}
+      onAddProduct: (product) =>  {dispatch(actions.addProduct(product))}
     }
   }
   

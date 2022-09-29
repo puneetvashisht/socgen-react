@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import { connect } from 'react-redux'
 import BasicExample from './BasicExample'
+import * as actions from '../actions/product.js'
 
 const Product = (props)=> {
 
@@ -29,7 +30,7 @@ const mapStateToProps = (state)=> {
 }
 const mapDispatchToProps = (dispatch)=> {
   return {
-    onFetchProduct: () =>  { dispatch({type:'FETCH_PRODUCTS'})}
+    onFetchProduct: () => dispatch(actions.fetchProducts())
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Product)
